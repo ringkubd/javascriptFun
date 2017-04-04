@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Image Slider in JS</title>
+		<style type="text/css">
+
+		#macScreen{
+			position: absolute;;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			background: url(resources/mac.png);
+			width: 799px;
+			height: 609px;
+		}
+
+		#imageContainer{
+			width: 410px;
+			height: 720px;
+			margin: 28px 0px 0px 40px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="macScreen">
+			<div id="imageContainer">
+			</div>
+		</div>
+		<script type="text/javascript">
+
+		var imageContainer = document.getElementById('imageContainer');
+		var images = ['Yercaud.jpg', 'Yelagiri.jpg', 'Kadapakkam.jpg'];
+		var totalPics = images.length;
+		var currentImage = 0;
+
+		function changeImage() {
+			var imageSource = "resources/" + images[currentImage];
+			currentImage = currentImage + 1 == totalPics ? 0 : currentImage + 1;
+			imageContainer.innerHTML = '<img src="' + imageSource + '" width="720" height="410" />';
+			setTimeout(changeImage, 3000);
+		}
+
+		changeImage();
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mouse animstion</title>
+	<style>
+		body{
+			background-color: black;
+		}
+		.mouse_circle{
+			width: 20px;
+			height: 20px;
+			border: 1px solid #000;
+			position: absolute;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		document.onmousemove = animateCircle;
+		function animateCircle(e){
+			var colors = ['black','green','red','yellow','purple','aqua','blue','skyblue'];
+			var circle = document.createElement('div');
+			circle.setAttribute('class','mouse_circle');
+			document.body.appendChild(circle);
+			circle.style.left = e.clientX + "px";
+			circle.style.top = e.clientY + "px";
+			circle.style.transition = "all 5s ease 2s";
+			var color = colors[Math.floor(Math.random()*colors.length)];
+			circle.style.borderColor = color;
+			circle.style.left = circle.offsetLeft-500 +"px";
+			circle.style.opacity="0.5";
+			
+		}
+	</script>
+</body>
+</html>

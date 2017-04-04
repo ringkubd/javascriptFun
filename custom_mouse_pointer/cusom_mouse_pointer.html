@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Custome Mouse Pointer</title>
+	<style>
+	body{
+		cursor: none;
+	}
+		.mouse{
+			position: absolute;
+			height: 30px;
+			width: 30px;
+			cursor: none;
+
+		}
+
+	</style>
+</head>
+<body>
+	<img id="mouse_pointer" class="mouse" src="cursor.png" alt="cursor" style="display: none">
+	<script>
+		var cursor = document.getElementById("mouse_pointer");
+		function mouse_pointer(){
+			cursor.style.display = "";
+			cursor.style.left=event.clientX+"px";
+			cursor.style.top=event.clientY+"px";
+			cursor.style.cursor=none;
+		}
+		window.onmousemove = mouse_pointer;
+	</script>
+</body>
+</html>

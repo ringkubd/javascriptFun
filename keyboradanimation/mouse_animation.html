@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Keyboard Animation</title>
+	<style>
+		body{
+			background-color: #000;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		document.onkeydown=animateKeys;
+		function animateKeys(e){
+			var colors = ['white','black','green','red','yellow','purple','aqua','blue','skyblue'];
+			var keydown = e.keyCode;
+			var c = String.fromCharCode(keydown);
+
+			var key = document.createElement("div");
+			document.body.appendChild(key);
+
+			key.style.position = "absolute";
+			var randX = Math.floor(Math.random() * window.innerWidth);
+			var randY = Math.floor(Math.random() * window.innerHeight);
+
+			key.style.left = randX + "px";
+			key.style.top = randY + "px";
+			key.innerText = c;
+
+			key.style.transition 	= "all 1s ease 1s";
+			key.style.left 			= key.offsetLeft-30 + "px";
+			key.style.top 			= key.offsetTop+key.offsetBottom + "px";
+			var color 				= colors[Math.floor(Math.random()*colors.length)];
+			key.style.color 		= color;
+			key.style.fontSize		="30px";
+			key.style.opacity 		= "0.5";
+			key.style.bottom		="0px";
+
+
+
+		}
+	</script>
+</body>
+</html>

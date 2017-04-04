@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Controlling Object By keyboard</title>
+</head>
+<body>
+<img src="cat.png" alt="Cat" id="object" style="position: absolute;">
+	<script>
+		var object 		= document.getElementById('object');
+		var leftKey 	= 37;
+		var rightKey 	= 39;
+		var topKey 		= 38;
+		var downKey 	= 40;
+		var speed		= 20;
+		var leftRotate	= 0;
+		var rightRotate	= 0;
+
+		function controllObject(e){
+			var key = e.keyCode;
+			if (key == leftKey) {
+				leftRotate += -10;
+				object.style.transform = "rotate"+"("+leftRotate+"deg)";
+				console.log("rotate"+"("+leftRotate+"deg)");
+			}
+			if (key == rightKey) {
+				rightRotate += 10;
+				object.style.transform = "rotate"+"("+rightRotate+"deg)";
+				console.log("rotate"+"("+rightRotate+"deg)");
+			}
+		}
+		window.onkeydown = controllObject;
+	</script>
+</body>
+</html>
