@@ -1,3 +1,4 @@
 # javascriptFun
 JavaScript Various Funny Script....
-# Controlling Image(object) using Keyboard;
+# (1)Controlling Image(object) using Keyboard;
+You should controll various object using keyboard;
